@@ -3,7 +3,7 @@ package ping
 import (
 	api "github.com/chrisUsick/pingidentityapi"
 	"github.com/chrisUsick/terraform-provider-ping/ping/mocks"
-	"github.com/hashicorp/terraform/terraform"
+	"github.com/hashicorp/terraform-plugin-sdk/terraform"
 )
 
 type FakeClient struct {

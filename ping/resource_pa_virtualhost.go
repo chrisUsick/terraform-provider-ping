@@ -2,7 +2,7 @@ package ping
 
 import (
 	api "github.com/chrisUsick/pingidentityapi"
-	"github.com/hashicorp/terraform/helper/schema"
+	"github.com/hashicorp/terraform-plugin-sdk/helper/schema"
 	"strconv"
 )
 

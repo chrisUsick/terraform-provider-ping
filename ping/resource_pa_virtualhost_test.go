@@ -11,8 +11,8 @@ import (
 	"github.com/chrisUsick/terraform-provider-ping/ping/mocks"
 	"github.com/stretchr/testify/mock"
 
-	r "github.com/hashicorp/terraform/helper/resource"
-	"github.com/hashicorp/terraform/terraform"
+	r "github.com/hashicorp/terraform-plugin-sdk/helper/resource"
+	"github.com/hashicorp/terraform-plugin-sdk/terraform"
 )
 
 func response404() *pingidentityapi.ClientError {

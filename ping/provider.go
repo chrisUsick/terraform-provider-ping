@@ -2,7 +2,7 @@ package ping
 
 import (
 	"github.com/chrisUsick/pingidentityapi"
-	"github.com/hashicorp/terraform/helper/schema"
+	"github.com/hashicorp/terraform-plugin-sdk/helper/schema"
 )
 
 func ProviderFactory(client pingidentityapi.IClient) *schema.Provider {
@@ -77,7 +77,7 @@ func providerConfigure(client pingidentityapi.IClient, d *schema.ResourceData) (
 		Username:           d.Get("username").(string),
 		Password:           d.Get("password").(string),
 		BaseURL:            d.Get("base_url").(string),
-		XSRFHeader:          d.Get("xsrf_header").(string),
+		XSRFHeader:         d.Get("xsrf_header").(string),
 		InsecureSkipVerify: d.Get("insecure_skip_verify").(bool),
 	}
 	return config.Client(client), nil
