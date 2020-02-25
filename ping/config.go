@@ -14,6 +14,7 @@ type Config struct {
 	Username           string
 	Password           string
 	BaseURL            string
+	XSRFHeader         string
 	InsecureSkipVerify bool
 }
 
@@ -32,7 +33,7 @@ func (c Config) Client(client pingidentityapi.IClient) interface{} {
 			ExpectContinueTimeout: 1 * time.Second,
 		}
 		tr.(*http.Transport).TLSClientConfig = &tls.Config{InsecureSkipVerify: c.InsecureSkipVerify}
-		client := api.NewClient(&api.Configuration{c.BaseURL, c.Username, c.Password, tr})
+		client := api.NewClient(&api.Configuration{c.BaseURL, c.Username, c.Password, c.XSRFHeader, tr})
 		return client
 	}
 	return client

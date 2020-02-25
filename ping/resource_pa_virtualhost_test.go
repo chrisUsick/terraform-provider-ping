@@ -119,6 +119,7 @@ func testCreateVirtualhostConfig() string {
 			username             = "Administrator"
 			password             = "Testpassword1"
 			base_url             = "https://192.168.33.111:9000/pa-admin-api/v3/"
+			xsrf_header			 = "PingAccess"
 			insecure_skip_verify = true
 		}
 		resource "ping_virtualhost" "test" {
@@ -134,6 +135,7 @@ func testUpdateVirtualhostConfig() string {
 			username             = "Administrator"
 			password             = "Testpassword1"
 			base_url             = "https://192.168.33.111:9000/pa-admin-api/v3/"
+			xsrf_header			 = "PingAccess"
 			insecure_skip_verify = true
 		}
 		resource "ping_virtualhost" "test" {

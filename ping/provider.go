@@ -40,6 +40,13 @@ func provider() *schema.Provider {
 					"BASE_URL",
 				}, nil),
 			},
+			"xsrf_header": &schema.Schema{
+				Type:     schema.TypeString,
+				Optional: true,
+				DefaultFunc: schema.MultiEnvDefaultFunc([]string{
+					"XSRF_HEADER",
+				}, nil),
+			},
 			"insecure_skip_verify": &schema.Schema{
 				Type:     schema.TypeBool,
 				Optional: true,
@@ -70,6 +77,7 @@ func providerConfigure(client pingidentityapi.IClient, d *schema.ResourceData) (
 		Username:           d.Get("username").(string),
 		Password:           d.Get("password").(string),
 		BaseURL:            d.Get("base_url").(string),
+		XSRFHeader:          d.Get("xsrf_header").(string),
 		InsecureSkipVerify: d.Get("insecure_skip_verify").(bool),
 	}
 	return config.Client(client), nil
